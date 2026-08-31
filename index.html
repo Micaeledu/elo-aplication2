@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elo Apple Repair — assistência técnica que busca e entrega em Salvador</title>
+<meta name="description" content="Conserto de iPhone e Android em Salvador. A gente busca o aparelho na sua casa, conserta e devolve funcionando. Boca do Rio, nota 5,0 no Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F1F3F2;
+  --paper-2:#FFFFFF;
+  --fg:#080A0A;
+  --fg-soft:#525A5B;
+  --line:rgba(10,12,12,.14);
+  --panel:#000000;
+  --panel-fg:#F4F6F5;
+  --panel-soft:#8E9694;
+  --panel-line:rgba(255,255,255,.16);
+  --lime:#C7F53E;
+  --radius:22px;
+  --display:"Bricolage Grotesque","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --body:"Instrument Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E1110;
+    --paper-2:#161A19;
+    --fg:#EEF1F0;
+    --fg-soft:#9AA2A2;
+    --line:rgba(255,255,255,.16);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1110;
+  --paper-2:#161A19;
+  --fg:#EEF1F0;
+  --fg-soft:#9AA2A2;
+  --line:rgba(255,255,255,.16);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body::before{
+  content:"";position:fixed;inset:0;z-index:60;pointer-events:none;
+  opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--fg);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.025em;line-height:.98;margin:0}
+p{margin:0}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:4px}
+
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 44px}
+
+/* ---------- header ---------- */
+.top{position:relative;z-index:5;padding:30px 0 28px}
+.top-in{display:flex;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand svg{display:block;flex:none}
+.brand b{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.02em;line-height:1}
+.brand span{display:block;font-size:11.5px;color:var(--fg-soft);letter-spacing:.02em;line-height:1.3}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:18px}
+.tel{text-decoration:none;font-weight:600;font-size:15.5px;white-space:nowrap}
+.tel:hover{text-decoration:underline;text-underline-offset:3px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  background:var(--lime);color:#000;text-decoration:none;
+  font-family:var(--body);font-weight:600;font-size:15.5px;
+  padding:13px 20px;border-radius:999px;border:0;cursor:pointer;
+  box-shadow:0 4px 20px rgba(199,245,62,.32), inset 0 1px 0 rgba(255,255,255,.5);
+  transition:transform .18s ease, filter .18s ease, box-shadow .18s ease;
+}
+.btn:hover{box-shadow:0 8px 28px rgba(199,245,62,.44), inset 0 1px 0 rgba(255,255,255,.5)}
+.btn-ghost{box-shadow:none}
+.btn-ghost:hover{box-shadow:none}
+.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.btn svg{flex:none}
+.btn-ghost{background:transparent;color:var(--panel-fg);border:1px solid var(--panel-line)}
+.btn-ghost:hover{background:rgba(255,255,255,.07);filter:none}
+
+/* ---------- hero ---------- */
+.hero{
+  background:
+    radial-gradient(58% 46% at 74% 42%, rgba(199,245,62,.13) 0%, rgba(199,245,62,0) 70%),
+    radial-gradient(120% 100% at 68% 30%, #151C18 0%, #000 64%);
+  color:var(--panel-fg);
+  border-radius:var(--radius);
+  padding:80px 0 0;
+  overflow:hidden;
+  position:relative;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:end;
+  padding:0 74px;
+}
+.hero h1{
+  font-size:clamp(40px,5.4vw,68px);
+  max-width:12ch;
+  margin-bottom:22px;
+}
+.hero-lead{color:var(--panel-soft);font-size:18px;max-width:44ch;margin-bottom:30px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:44px}
+.rating{display:flex;align-items:center;gap:13px;margin-bottom:52px}
+.rating-num{font-family:var(--display);font-weight:800;font-size:38px;line-height:1;color:var(--lime)}
+.stars{display:flex;gap:2px}
+.rating-txt{font-size:14px;color:var(--panel-soft);line-height:1.35}
+.hero-stage{
+  display:flex;justify-content:center;align-items:center;
+  padding:56px 0 72px;perspective:1500px;
+}
+.phone-wrap{
+  position:relative;width:min(260px,64vw);
+  transform:rotateY(-13deg) rotateX(5deg);
+  transform-style:preserve-3d;will-change:transform;
+  cursor:grab;touch-action:pan-y;-webkit-tap-highlight-color:transparent;
+  filter:drop-shadow(-26px 34px 40px rgba(0,0,0,.72)) drop-shadow(0 0 42px rgba(199,245,62,.13));
+}
+.phone-wrap.grabbing{cursor:grabbing}
+.glare{
+  transform:translateX(calc(var(--gx,320) * 1px)) rotate(16deg);
+  transform-box:fill-box;transform-origin:center;pointer-events:none;
+}
+
+.facts{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--panel-line);
+  margin-top:8px;
+}
+.fact{padding:27px 74px;border-right:1px solid var(--panel-line)}
+.fact:last-child{border-right:0}
+.fact b{display:block;font-family:var(--display);font-weight:600;font-size:17px;margin-bottom:3px}
+.fact span{font-size:13.5px;color:var(--panel-soft)}
+
+/* ---------- phone / crack animation ---------- */
+.phone{width:100%;height:auto;display:block;pointer-events:none}
+.crack{
+  fill:none;stroke:#C9D2D4;stroke-width:1.6;stroke-linecap:round;
+  opacity:.92;
+  stroke-dasharray:1 1;stroke-dashoffset:0;
+  animation:heal .95s cubic-bezier(.6,.05,.35,1) forwards;
+  animation-delay:.55s;
+}
+.crack.b{stroke-width:1.1;opacity:.7}
+.crack:nth-of-type(2){animation-delay:.62s}
+.crack:nth-of-type(3){animation-delay:.69s}
+.crack:nth-of-type(4){animation-delay:.58s}
+.crack:nth-of-type(5){animation-delay:.75s}
+.crack:nth-of-type(6){animation-delay:.66s}
+.crack:nth-of-type(7){animation-delay:.8s}
+.crack:nth-of-type(8){animation-delay:.72s}
+.crack:nth-of-type(9){animation-delay:.86s}
+@keyframes heal{to{stroke-dashoffset:1}}
+
+.seal{transform-origin:196px 196px;opacity:0;animation:seal .7s ease-out forwards;animation-delay:1.35s}
+@keyframes seal{
+  0%{opacity:.9;transform:scale(.1)}
+  70%{opacity:.5}
+  100%{opacity:0;transform:scale(2.4)}
+}
+.screen-on{opacity:0;animation:fadein .6s ease forwards;animation-delay:1.5s}
+.bub1{opacity:0;animation:pop .45s cubic-bezier(.2,.9,.3,1.2) forwards;animation-delay:1.85s}
+.bub2{opacity:0;animation:pop .45s cubic-bezier(.2,.9,.3,1.2) forwards;animation-delay:2.25s}
+@keyframes fadein{to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+
+@media (prefers-reduced-motion:reduce){
+  .crack{animation:none;stroke-dashoffset:1}
+  .seal{animation:none;opacity:0}
+  .screen-on,.bub1,.bub2{animation:none;opacity:1;transform:none}
+}
+
+/* ---------- sections ---------- */
+section{padding:120px 0}
+.sec-head{max-width:34ch;margin-bottom:52px}
+.sec-head h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:14px}
+.sec-head p{color:var(--fg-soft);font-size:17.5px}
+
+/* como funciona */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+.step{padding:26px 26px 0 0;border-right:1px solid var(--line);position:relative}
+.step:last-child{border-right:0}
+.step:not(:first-child){padding-left:26px}
+.step-n{font-family:var(--display);font-weight:800;font-size:15px;color:var(--fg-soft);display:block;margin-bottom:56px}
+.step h3{font-size:22px;margin-bottom:9px}
+.step p{font-size:15.5px;color:var(--fg-soft)}
+.step.is-last .step-n{color:#000;background:var(--lime);display:inline-block;padding:2px 9px;border-radius:999px;margin-bottom:54px}
+
+/* serviços */
+.svc-layout{display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:start}
+.svc-list{border-top:1px solid var(--line)}
+.svc{
+  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:baseline;
+  width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);
+  padding:22px 4px;cursor:default;color:inherit;font-family:inherit;
+  transition:padding-left .22s ease;
+}
+.svc:hover,.svc:focus-visible{padding-left:14px}
+.svc h3{font-size:clamp(21px,2.4vw,27px);font-weight:600;letter-spacing:-.02em}
+.svc p{font-size:15px;color:var(--fg-soft);margin-top:5px;max-width:52ch}
+.svc-tag{font-size:13.5px;color:var(--fg-soft);white-space:nowrap}
+.svc:hover .svc-tag,.svc:focus-visible .svc-tag{color:var(--fg)}
+
+.diagram{position:sticky;top:32px}
+.diagram figcaption{font-size:13.5px;color:var(--fg-soft);margin-top:14px;max-width:30ch}
+.map-phone{width:100%;height:auto;display:block}
+.map-body{fill:none;stroke:var(--fg);stroke-width:1.4;opacity:.55}
+.hot{fill:var(--fg);opacity:.22;transition:opacity .2s ease, r .2s ease, fill .2s ease}
+.hot.on{fill:var(--lime);opacity:1;r:9}
+.hot-ring{fill:none;stroke:var(--lime);stroke-width:1.4;opacity:0;transition:opacity .25s ease,r .35s ease}
+.hot-ring.on{opacity:.85}
+
+/* depoimentos */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.quote{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 1px 2px rgba(8,10,10,.04)}
+.quote p::first-letter{color:var(--fg)}
+.quote p{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.35;letter-spacing:-.01em;margin-bottom:18px}
+.quote footer{font-size:13.5px;color:var(--fg-soft)}
+
+/* onde estamos */
+.place{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.place dl{margin:0;border-top:1px solid var(--line)}
+.place dt{font-size:13.5px;color:var(--fg-soft);padding-top:18px}
+.place dd{margin:2px 0 18px;font-size:18px;border-bottom:1px solid var(--line);padding-bottom:18px}
+.place dd a{text-decoration:none;border-bottom:1px solid var(--lime);padding-bottom:2px}
+.area h2{font-size:clamp(26px,3vw,36px);margin-bottom:16px}
+.area p{color:var(--fg-soft);margin-bottom:26px;max-width:40ch}
+
+/* cta final */
+.final{background:radial-gradient(90% 140% at 88% 20%, rgba(199,245,62,.12) 0%, rgba(199,245,62,0) 64%),radial-gradient(120% 120% at 20% 0%, #151C18 0%, #000 62%);color:var(--panel-fg);border-radius:var(--radius);padding:90px 74px;text-align:left}
+.final h2{font-size:clamp(32px,4.4vw,54px);max-width:16ch;margin-bottom:20px}
+.final p{color:var(--panel-soft);max-width:46ch;margin-bottom:32px;font-size:18px}
+.final-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+footer.site{padding:56px 0 130px;color:var(--fg-soft);font-size:14px}
+.foot-in{display:flex;flex-wrap:wrap;gap:18px;align-items:center;border-top:1px solid var(--line);padding-top:26px}
+.foot-in .brand b{font-size:15px}
+.foot-links{margin-left:auto;display:flex;gap:20px}
+.foot-links a{text-decoration:none}
+.foot-links a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* barra fixa mobile */
+.dock{display:none}
+
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;padding:0 40px;gap:10px}
+  .hero{padding-top:44px}
+  .rating{margin-bottom:32px}
+  .hero-stage{padding:34px 0 44px}
+  .facts{grid-template-columns:1fr}
+  .fact{padding:20px 40px;border-right:0;border-bottom:1px solid var(--panel-line)}
+  .fact:last-child{border-bottom:0}
+  .steps{grid-template-columns:1fr 1fr}
+  .step{border-bottom:1px solid var(--line);padding-bottom:24px}
+  .step:nth-child(2n){border-right:0}
+  .step-n,.step.is-last .step-n{margin-bottom:24px}
+  .svc-layout{grid-template-columns:1fr}
+  .diagram{display:none}
+  .quotes{grid-template-columns:1fr}
+  .place{grid-template-columns:1fr;gap:36px}
+  .final{padding:62px 40px}
+  section{padding:88px 0}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .top-right .tel{display:none}
+  .steps{grid-template-columns:1fr}
+  .step{border-right:0;padding-left:0!important}
+  .step:last-child{border-bottom:0}
+  .hero-grid{padding:0 26px}
+  footer.site{padding-bottom:96px}
+  .dock{
+    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;
+    gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:var(--panel);border-top:1px solid var(--panel-line);align-items:center;
+  }
+  .dock .btn{flex:1;padding:14px 16px}
+  .dock a.dock-tel{color:var(--panel-fg);text-decoration:none;font-weight:600;font-size:15px;padding:0 8px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 40 40">
+    <rect width="40" height="40" rx="9" fill="#000"/>
+    <path d="M20 10.6c-1.4-1.6-3.4-1.9-4.6-1.1-.5.3-.6.9-.3 1.3l1.6 1.9" stroke="#C7F53E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M13.2 15.6c1-1.3 2.5-2 4-1.7 1 .2 1.7.5 2.8.5s1.8-.3 2.8-.5c1.5-.3 3 .4 4 1.7 1.6 2 1.3 5.9-.6 8.9-1 1.6-2.2 3.2-3.7 3.1-1.4 0-1.9-.9-3.5-.9s-2.1.9-3.5.9c-1.5.1-2.7-1.6-3.7-3.2-1.9-3-2.2-6.8-.6-8.8Z" fill="#fff"/>
+    <circle cx="17.2" cy="19.4" r="1.35" fill="#000"/>
+    <circle cx="22.8" cy="19.4" r="1.35" fill="#000"/>
+    <path d="M14.6 12.2l-1.5-1.9M25.4 12.2l1.5-1.9" stroke="#C7F53E" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="wa" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5v-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.7.7-1 1.6-.9 2.5.2 1.2.8 2.3 1.6 3.2a10 10 0 0 0 4 3.1c1.3.5 2 .6 2.7.5.7-.1 1.5-.6 1.7-1.2.2-.5.2-1 .2-1.1 0-.1-.2-.2-.4-.3Z"/>
+  </symbol>
+  <symbol id="star" viewBox="0 0 20 20"><path fill="#C7F53E" d="m10 1.6 2.4 5 5.5.8-4 3.8 1 5.4-4.9-2.6-4.9 2.6 1-5.4-4-3.8 5.5-.8 2.4-5Z"/></symbol>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <div class="top-in">
+      <a class="brand" href="#topo">
+        <svg width="38" height="38" aria-hidden="true"><use href="#logo"/></svg>
+        <span><b>Elo Apple Repair</b><span>Boca do Rio, Salvador</span></span>
+      </a>
+      <div class="top-right">
+        <a class="tel" href="tel:+5571993929092">(71) 99392-9092</a>
+        <a class="btn" href="https://wa.me/5571993929092?text=Oi%2C%20vim%20pelo%20site.%20Meu%20celular%20est%C3%A1%20com%20problema%20e%20queria%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+          <svg width="18" height="18" aria-hidden="true"><use href="#wa"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- ============ HERO ============ -->
+    <div class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Seu celular volta funcionando.</h1>
+          <p class="hero-lead">A gente busca o aparelho na sua casa, faz o orçamento, conserta e devolve na sua mão. iPhone e Android, com garantia.</p>
+          <div class="hero-cta">
+            <a class="btn" href="https://wa.me/5571993929092?text=Oi%2C%20vim%20pelo%20site.%20Meu%20celular%20est%C3%A1%20com%20problema%20e%20queria%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+              <svg width="18" height="18" aria-hidden="true"><use href="#wa"/></svg>
+              Pedir orçamento
+            </a>
+            <a class="btn btn-ghost" href="#servicos">Ver o que consertamos</a>
+          </div>
+          <div class="rating">
+            <span class="rating-num">5,0</span>
+            <div>
+              <div class="stars" role="img" aria-label="5 de 5 estrelas">
+                <svg width="15" height="15"><use href="#star"/></svg>
+                <svg width="15" height="15"><use href="#star"/></svg>
+                <svg width="15" height="15"><use href="#star"/></svg>
+                <svg width="15" height="15"><use href="#star"/></svg>
+                <svg width="15" height="15"><use href="#star"/></svg>
+              </div>
+              <div class="rating-txt">15 avaliações no Google, nenhuma abaixo de 5</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-stage">
+          <div class="phone-wrap" id="phoneWrap">
+          <svg class="phone" viewBox="0 0 300 600" role="img" aria-label="Ilustração de um celular com a tela trincada que se recompõe e liga">
+            <defs>
+              <clipPath id="scr"><rect x="16" y="16" width="268" height="568" rx="30"/></clipPath>
+              <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1C2320"/><stop offset="1" stop-color="#0A0D0C"/>
+              </linearGradient>
+              <linearGradient id="glr" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+                <stop offset=".5" stop-color="#fff" stop-opacity=".10"/>
+                <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+
+            <rect x="2" y="2" width="296" height="596" rx="44" fill="#0B0E0D" stroke="#2C3331" stroke-width="2.5"/>
+            <rect x="16" y="16" width="268" height="568" rx="30" fill="url(#glow)"/>
+
+            <g clip-path="url(#scr)">
+              <!-- tela ligada -->
+              <g class="screen-on">
+                <rect x="16" y="16" width="268" height="568" rx="30" fill="#0F1412"/>
+                <rect x="40" y="52" width="76" height="9" rx="4.5" fill="#3A4340"/>
+                <g class="bub1">
+                  <rect x="40" y="200" width="176" height="66" rx="18" fill="#232B28"/>
+                  <rect x="58" y="220" width="128" height="8" rx="4" fill="#6E7975"/>
+                  <rect x="58" y="238" width="92" height="8" rx="4" fill="#4E5754"/>
+                </g>
+                <g class="bub2">
+                  <rect x="84" y="284" width="176" height="66" rx="18" fill="#C7F53E"/>
+                  <rect x="102" y="304" width="118" height="8" rx="4" fill="#3E5008"/>
+                  <rect x="102" y="322" width="140" height="8" rx="4" fill="#5E7A10"/>
+                </g>
+                <rect x="40" y="500" width="220" height="40" rx="20" fill="#1A211E"/>
+              </g>
+              <!-- trincas -->
+              <g stroke-linejoin="round">
+                <path class="crack" pathLength="1" d="M196 196 L262 96"/>
+                <path class="crack" pathLength="1" d="M196 196 L268 244"/>
+                <path class="crack" pathLength="1" d="M196 196 L142 60"/>
+                <path class="crack" pathLength="1" d="M196 196 L96 268"/>
+                <path class="crack" pathLength="1" d="M196 196 L206 372"/>
+                <path class="crack" pathLength="1" d="M196 196 L34 214"/>
+                <path class="crack b" pathLength="1" d="M196 196 L120 424 L58 512"/>
+                <path class="crack b" pathLength="1" d="M196 196 L252 320 L226 470"/>
+                <path class="crack b" pathLength="1" d="M154 128 L232 152 L272 130"/>
+                <path class="crack b" pathLength="1" d="M132 232 L164 300 L246 300"/>
+                <path class="crack b" pathLength="1" d="M108 176 L92 108 L146 62"/>
+              </g>
+              <circle class="seal" cx="196" cy="196" r="20" fill="none" stroke="#C7F53E" stroke-width="2.5"/>
+            </g>
+
+            <rect x="112" y="26" width="76" height="20" rx="10" fill="#0B0E0D"/>
+            <g clip-path="url(#scr)">
+              <rect class="glare" x="-130" y="-140" width="130" height="880" fill="url(#glr)"/>
+            </g>
+          </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="facts">
+        <div class="fact"><b>Buscamos e entregamos</b><span>Você não precisa sair de casa</span></div>
+        <div class="fact"><b>Apple e Android</b><span>Todas as marcas, tela original ou alternativa</span></div>
+        <div class="fact"><b>Aberto até as 19h</b><span>Todos os dias úteis</span></div>
+      </div>
+    </div>
+
+    <!-- ============ COMO FUNCIONA ============ -->
+    <section id="como">
+      <div class="sec-head">
+        <h2>Do seu sofá até a bancada e de volta</h2>
+        <p>Quatro passos. O único que exige alguma coisa de você é o primeiro.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-n">1</span>
+          <h3>Você manda mensagem</h3>
+          <p>Conta o que houve com o aparelho e onde você está. Se der, manda uma foto.</p>
+        </div>
+        <div class="step">
+          <span class="step-n">2</span>
+          <h3>Buscamos onde você estiver</h3>
+          <p>Combinamos o horário e passamos no seu endereço para pegar o aparelho.</p>
+        </div>
+        <div class="step">
+          <span class="step-n">3</span>
+          <h3>Orçamento antes de mexer</h3>
+          <p>Abrimos, testamos e mandamos o valor. Nada é consertado sem você aprovar.</p>
+        </div>
+        <div class="step is-last">
+          <span class="step-n">4</span>
+          <h3>Devolvemos na sua mão</h3>
+          <p>Aparelho testado, limpo e funcionando, entregue no mesmo endereço.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVIÇOS ============ -->
+    <section id="servicos">
+      <div class="sec-head">
+        <h2>O que a gente conserta</h2>
+        <p>Passe o mouse em cada item para ver onde fica a peça no aparelho.</p>
+      </div>
+
+      <div class="svc-layout">
+        <div class="svc-list">
+          <div class="svc" tabindex="0" data-part="tela">
+            <div><h3>Troca de tela</h3><p>Original ou alternativa, com o preço de cada uma na mão antes de você decidir.</p></div>
+            <span class="svc-tag">todas as marcas</span>
+          </div>
+          <div class="svc" tabindex="0" data-part="bateria">
+            <div><h3>Troca de bateria</h3><p>Para quem carrega três vezes por dia ou vê o aparelho desligar com 30%.</p></div>
+            <span class="svc-tag">no mesmo dia</span>
+          </div>
+          <div class="svc" tabindex="0" data-part="placa">
+            <div><h3>Molhou, caiu na água</h3><p>Limpeza e recuperação de placa. Quanto antes chegar aqui, maior a chance.</p></div>
+            <span class="svc-tag">diagnóstico</span>
+          </div>
+          <div class="svc" tabindex="0" data-part="conector">
+            <div><h3>Não carrega mais</h3><p>Troca do conector de carga, o que geralmente resolve o cabo que só funciona torto.</p></div>
+            <span class="svc-tag">reparo rápido</span>
+          </div>
+          <div class="svc" tabindex="0" data-part="camera">
+            <div><h3>Câmera, botão e som</h3><p>Foto embaçada, botão que não responde, ligação que ninguém escuta.</p></div>
+            <span class="svc-tag">peça a peça</span>
+          </div>
+          <div class="svc" tabindex="0" data-part="software">
+            <div><h3>Travando ou não liga</h3><p>Tela azul, reinício sozinho, atualização que deu errado. Sem perder seus dados quando possível.</p></div>
+            <span class="svc-tag">software</span>
+          </div>
+        </div>
+
+        <figure class="diagram">
+          <svg class="map-phone" viewBox="0 0 200 400" role="img" aria-label="Diagrama de um celular indicando a posição de cada peça">
+            <rect class="map-body" x="24" y="8" width="152" height="384" rx="26"/>
+            <rect class="map-body" x="36" y="20" width="128" height="360" rx="18"/>
+            <circle class="hot-ring" data-part="tela" cx="100" cy="150" r="22"/><circle class="hot" data-part="tela" cx="100" cy="150" r="6"/>
+            <circle class="hot-ring" data-part="bateria" cx="82" cy="252" r="22"/><circle class="hot" data-part="bateria" cx="82" cy="252" r="6"/>
+            <circle class="hot-ring" data-part="placa" cx="130" cy="212" r="22"/><circle class="hot" data-part="placa" cx="130" cy="212" r="6"/>
+            <circle class="hot-ring" data-part="conector" cx="100" cy="366" r="22"/><circle class="hot" data-part="conector" cx="100" cy="366" r="6"/>
+            <circle class="hot-ring" data-part="camera" cx="60" cy="46" r="22"/><circle class="hot" data-part="camera" cx="60" cy="46" r="6"/>
+            <circle class="hot-ring" data-part="software" cx="140" cy="316" r="22"/><circle class="hot" data-part="software" cx="140" cy="316" r="6"/>
+          </svg>
+          <figcaption>As peças mais trocadas em iPhone e Android. Se o seu problema não estiver na lista, mande mensagem que a gente avalia.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ DEPOIMENTOS ============ -->
+    <section id="clientes">
+      <div class="sec-head">
+        <h2>Quem já passou por aqui</h2>
+        <p>Resumo de avaliações deixadas no Google.</p>
+      </div>
+      <div class="quotes">
+        <div class="quote">
+          <p>Chegou, foi atendido na hora e saiu com o aparelho resolvido em poucos minutos.</p>
+          <footer>Avaliação no Google</footer>
+        </div>
+        <div class="quote">
+          <p>Deixou o iPhone quebrado, a loja buscou, passou o orçamento, consertou e devolveu na porta.</p>
+          <footer>Avaliação no Google</footer>
+        </div>
+        <div class="quote">
+          <p>Trocou a tela e ficou satisfeito com o resultado — ficou como novo.</p>
+          <footer>Avaliação no Google</footer>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ONDE ESTAMOS ============ -->
+    <section id="local">
+      <div class="place">
+        <dl>
+          <dt>Endereço</dt>
+          <dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Elo+Apple+Repair%2C+R.+Des.+Lineu+Lapa+Barreto%2C+28%2C+Boca+do+Rio%2C+Salvador+-+BA" target="_blank" rel="noopener">R. Des. Lineu Lapa Barreto, 28<br>Boca do Rio, Salvador — BA</a></dd>
+          <dt>Horário</dt>
+          <dd>Todos os dias úteis, até as 19h</dd>
+          <dt>Telefone e WhatsApp</dt>
+          <dd><a href="tel:+5571993929092">(71) 99392-9092</a></dd>
+        </dl>
+        <div class="area">
+          <h2>Prefere não sair de casa?</h2>
+          <p>A gente atende Boca do Rio e bairros vizinhos com busca e entrega. Manda seu endereço no WhatsApp que a gente confirma se cobre a sua região e quanto tempo leva.</p>
+          <a class="btn" href="https://wa.me/5571993929092?text=Oi%21%20Queria%20saber%20se%20voc%C3%AAs%20buscam%20o%20aparelho%20no%20meu%20endere%C3%A7o." target="_blank" rel="noopener">
+            <svg width="18" height="18" aria-hidden="true"><use href="#wa"/></svg>
+            Combinar a busca
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <div class="final">
+      <h2>Manda o que aconteceu com ele.</h2>
+      <p>Descreve o problema em uma frase e a gente responde com o próximo passo e uma estimativa de preço.</p>
+      <div class="final-row">
+        <a class="btn" href="https://wa.me/5571993929092?text=Oi%2C%20vim%20pelo%20site.%20Meu%20celular%20est%C3%A1%20com%20problema%20e%20queria%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+          <svg width="18" height="18" aria-hidden="true"><use href="#wa"/></svg>
+          Falar no WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="tel:+5571993929092">Ligar agora</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="foot-in">
+      <a class="brand" href="#topo">
+        <svg width="30" height="30" aria-hidden="true"><use href="#logo"/></svg>
+        <span><b>Elo Apple Repair</b></span>
+      </a>
+      <div class="foot-links">
+        <a href="#servicos">Serviços</a>
+        <a href="#como">Como funciona</a>
+        <a href="#local">Endereço</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div class="dock">
+  <a class="dock-tel" href="tel:+5571993929092">Ligar</a>
+  <a class="btn" href="https://wa.me/5571993929092?text=Oi%2C%20vim%20pelo%20site.%20Meu%20celular%20est%C3%A1%20com%20problema%20e%20queria%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+    <svg width="18" height="18" aria-hidden="true"><use href="#wa"/></svg>
+    Pedir orçamento
+  </a>
+</div>
+
+<script>
+(function(){
+  var rows = document.querySelectorAll('.svc');
+  function set(part, on){
+    document.querySelectorAll('.hot[data-part="'+part+'"], .hot-ring[data-part="'+part+'"]').forEach(function(el){
+      el.classList.toggle('on', on);
+    });
+  }
+  rows.forEach(function(row){
+    var p = row.getAttribute('data-part');
+    ['mouseenter','focus'].forEach(function(e){ row.addEventListener(e, function(){ set(p, true); }); });
+    ['mouseleave','blur'].forEach(function(e){ row.addEventListener(e, function(){ set(p, false); }); });
+  });
+})();
+</script>
+<script>
+(function(){
+  var wrap = document.getElementById('phoneWrap');
+  if(!wrap) return;
+  var glare = wrap.querySelector('.glare');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var BASE = {ry:-13, rx:5};
+
+  if(reduce){ wrap.style.transform = 'rotateY(-13deg) rotateX(5deg)'; return; }
+
+  var cur = {ry:BASE.ry, rx:BASE.rx, rz:0, ty:0};
+  var tgt = {ry:BASE.ry, rx:BASE.rx};
+  var scrollRz = 0, scrollTy = 0;
+  var drag = null;
+
+  // segue o mouse pela página
+  window.addEventListener('mousemove', function(e){
+    if(drag) return;
+    var r = wrap.getBoundingClientRect();
+    var dx = (e.clientX - (r.left + r.width/2)) / window.innerWidth;
+    var dy = (e.clientY - (r.top + r.height/2)) / window.innerHeight;
+    tgt.ry = BASE.ry + dx * 32;
+    tgt.rx = BASE.rx - dy * 20;
+  }, {passive:true});
+
+  // arrastar para girar (mouse e toque)
+  wrap.addEventListener('pointerdown', function(e){
+    drag = {x:e.clientX, y:e.clientY, ry:cur.ry, rx:cur.rx};
+    wrap.classList.add('grabbing');
+    try{ wrap.setPointerCapture(e.pointerId); }catch(err){}
+  });
+  wrap.addEventListener('pointermove', function(e){
+    if(!drag) return;
+    tgt.ry = drag.ry + (e.clientX - drag.x) * 0.45;
+    tgt.rx = Math.max(-38, Math.min(38, drag.rx - (e.clientY - drag.y) * 0.32));
+  });
+  function release(){
+    if(!drag) return;
+    drag = null;
+    wrap.classList.remove('grabbing');
+    tgt.ry = BASE.ry; tgt.rx = BASE.rx;   // volta sozinho
+  }
+  wrap.addEventListener('pointerup', release);
+  wrap.addEventListener('pointercancel', release);
+  wrap.addEventListener('pointerleave', function(){ if(drag) release(); });
+
+  // reage ao scroll
+  function onScroll(){
+    var r = wrap.getBoundingClientRect();
+    var p = (window.innerHeight/2 - (r.top + r.height/2)) / window.innerHeight;
+    p = Math.max(-1.2, Math.min(1.2, p));
+    scrollRz = p * 6;
+    scrollTy = p * -34;
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  (function loop(){
+    cur.ry += (tgt.ry - cur.ry) * 0.10;
+    cur.rx += (tgt.rx - cur.rx) * 0.10;
+    cur.rz += (scrollRz - cur.rz) * 0.08;
+    cur.ty += (scrollTy - cur.ty) * 0.08;
+    wrap.style.transform =
+      'translateY(' + cur.ty.toFixed(2) + 'px) rotateY(' + cur.ry.toFixed(2) +
+      'deg) rotateX(' + cur.rx.toFixed(2) + 'deg) rotateZ(' + cur.rz.toFixed(2) + 'deg)';
+    if(glare) glare.style.setProperty('--gx', (250 - cur.ry * 5).toFixed(1));
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
+</body>
+</html>
