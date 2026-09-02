@@ -1,0 +1,152 @@
+- generic [ref=f4e2]:
+  - banner [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - link "Elo Apple Repair Boca do Rio, Salvador" [ref=f4e5] [cursor=pointer]:
+        - /url: "#topo"
+        - generic [ref=f4e8]:
+          - text: Elo Apple Repair
+          - generic [ref=f4e9]: Boca do Rio, Salvador
+      - generic [ref=f4e10]:
+        - link "(71) 99392-9092" [ref=f4e11] [cursor=pointer]:
+          - /url: tel:+5571993929092
+        - link "Falar no WhatsApp" [ref=f4e12] [cursor=pointer]:
+          - /url: https://wa.me/5571993929092?text=Oi%2C%20vim%20pelo%20site.%20Meu%20celular%20est%C3%A1%20com%20problema%20e%20queria%20um%20or%C3%A7amento.
+  - main [ref=f4e15]:
+    - generic [ref=f4e16]:
+      - generic [ref=f4e17]:
+        - generic [ref=f4e18]:
+          - heading "Seu celular volta funcionando." [level=1] [ref=f4e19]
+          - paragraph [ref=f4e20]: A gente busca o aparelho na sua casa, faz o orçamento, conserta e devolve na sua mão. iPhone e Android, com garantia.
+          - generic [ref=f4e21]:
+            - link "Pedir orçamento" [ref=f4e22] [cursor=pointer]:
+              - /url: https://wa.me/5571993929092?text=Oi%2C%20vim%20pelo%20site.%20Meu%20celular%20est%C3%A1%20com%20problema%20e%20queria%20um%20or%C3%A7amento.
+            - link "Ver o que consertamos" [ref=f4e25] [cursor=pointer]:
+              - /url: "#servicos"
+          - generic [ref=f4e26]:
+            - generic [ref=f4e27]: 5,0
+            - generic [ref=f4e28]:
+              - img "5 de 5 estrelas" [ref=f4e29]
+              - generic [ref=f4e40]: 15 avaliações no Google, nenhuma abaixo de 5
+        - img "iPhone apoiado em pedras, pronto para o conserto" [ref=f4e43]
+      - generic [ref=f4e44]:
+        - generic [ref=f4e45]:
+          - generic [ref=f4e46]: Buscamos e entregamos
+          - text: Você não precisa sair de casa
+        - generic [ref=f4e47]:
+          - generic [ref=f4e48]: Apple e Android
+          - text: Todas as marcas, tela original ou alternativa
+        - generic [ref=f4e49]:
+          - generic [ref=f4e50]: Aberto até as 19h
+          - text: Todos os dias úteis
+    - generic [ref=f4e51]:
+      - generic [ref=f4e52]:
+        - heading "Do seu sofá até a bancada e de volta" [level=2] [ref=f4e53]
+        - paragraph [ref=f4e54]: Quatro passos. O único que exige alguma coisa de você é o primeiro.
+      - generic [ref=f4e55]:
+        - generic [ref=f4e56]:
+          - generic [ref=f4e57]: "1"
+          - heading "Você manda mensagem" [level=3] [ref=f4e58]
+          - paragraph [ref=f4e59]: Conta o que houve com o aparelho e onde você está. Se der, manda uma foto.
+        - generic [ref=f4e60]:
+          - generic [ref=f4e61]: "2"
+          - heading "Buscamos onde você estiver" [level=3] [ref=f4e62]
+          - paragraph [ref=f4e63]: Combinamos o horário e passamos no seu endereço para pegar o aparelho.
+        - generic [ref=f4e64]:
+          - generic [ref=f4e65]: "3"
+          - heading "Orçamento antes de mexer" [level=3] [ref=f4e66]
+          - paragraph [ref=f4e67]: Abrimos, testamos e mandamos o valor. Nada é consertado sem você aprovar.
+        - generic [ref=f4e68]:
+          - generic [ref=f4e69]: "4"
+          - heading "Devolvemos na sua mão" [level=3] [ref=f4e70]
+          - paragraph [ref=f4e71]: Aparelho testado, limpo e funcionando, entregue no mesmo endereço.
+    - generic [ref=f4e72]:
+      - generic [ref=f4e73]:
+        - heading "O que a gente conserta" [level=2] [ref=f4e74]
+        - paragraph [ref=f4e75]: Passe o mouse ou toque em cada item para ver onde fica a peça no aparelho.
+      - generic [ref=f4e76]:
+        - generic [ref=f4e77]:
+          - heading "Peça por peça" [level=3] [ref=f4e78]
+          - generic [ref=f4e79]:
+            - generic [ref=f4e80]:
+              - heading "Troca de tela" [level=3] [ref=f4e81]
+              - paragraph [ref=f4e82]: Original ou alternativa, com o preço de cada uma na mão antes de você decidir.
+            - generic [ref=f4e83]: todas as marcas
+          - generic [ref=f4e84]:
+            - generic [ref=f4e85]:
+              - heading "Troca de bateria" [level=3] [ref=f4e86]
+              - paragraph [ref=f4e87]: Para quem carrega três vezes por dia ou vê o aparelho desligar com 30%.
+            - generic [ref=f4e88]: no mesmo dia
+          - generic [ref=f4e89]:
+            - generic [ref=f4e90]:
+              - heading "Câmera, botão e som" [level=3] [ref=f4e91]
+              - paragraph [ref=f4e92]: Foto embaçada, botão que não responde, ligação que ninguém escuta.
+            - generic [ref=f4e93]: peça a peça
+          - heading "Diagnóstico e reparo geral" [level=3] [ref=f4e94]
+          - generic [ref=f4e95]:
+            - generic [ref=f4e96]:
+              - heading "Molhou, caiu na água" [level=3] [ref=f4e97]
+              - paragraph [ref=f4e98]: Limpeza e recuperação de placa. Quanto antes chegar aqui, maior a chance.
+            - generic [ref=f4e99]: diagnóstico
+          - generic [ref=f4e100]:
+            - generic [ref=f4e101]:
+              - heading "Não carrega mais" [level=3] [ref=f4e102]
+              - paragraph [ref=f4e103]: Troca do conector de carga, o que geralmente resolve o cabo que só funciona torto.
+            - generic [ref=f4e104]: reparo rápido
+          - generic [ref=f4e105]:
+            - generic [ref=f4e106]:
+              - heading "Travando ou não liga" [level=3] [ref=f4e107]
+              - paragraph [ref=f4e108]: Tela azul, reinício sozinho, atualização que deu errado. Sem perder seus dados quando possível.
+            - generic [ref=f4e109]: software
+        - figure "As peças mais trocadas em iPhone e Android. Se o seu problema não estiver na lista, mande mensagem que a gente avalia." [ref=f4e110]:
+          - img "Diagrama de um celular, nas proporções de um iPhone Pro Max, indicando a posição de cada peça" [ref=f4e111]
+    - generic [ref=f4e132]:
+      - generic [ref=f4e133]:
+        - heading "Quem já passou por aqui" [level=2] [ref=f4e134]
+        - paragraph [ref=f4e135]: Resumo de avaliações deixadas no Google.
+      - generic [ref=f4e136]:
+        - generic [ref=f4e137]:
+          - paragraph [ref=f4e138]: Chegou, foi atendido na hora e saiu com o aparelho resolvido em poucos minutos.
+          - generic [ref=f4e139]: Avaliação no Google
+        - generic [ref=f4e140]:
+          - paragraph [ref=f4e141]: Deixou o iPhone quebrado, a loja buscou, passou o orçamento, consertou e devolveu na porta.
+          - generic [ref=f4e142]: Avaliação no Google
+        - generic [ref=f4e143]:
+          - paragraph [ref=f4e144]: Trocou a tela e ficou satisfeito com o resultado — ficou como novo.
+          - generic [ref=f4e145]: Avaliação no Google
+    - generic [ref=f4e147]:
+      - generic [ref=f4e148]:
+        - term [ref=f4e149]: Endereço
+        - definition [ref=f4e150]:
+          - link "R. Des. Lineu Lapa Barreto, 28 Boca do Rio, Salvador — BA" [ref=f4e151] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=Elo+Apple+Repair%2C+R.+Des.+Lineu+Lapa+Barreto%2C+28%2C+Boca+do+Rio%2C+Salvador+-+BA
+            - text: R. Des. Lineu Lapa Barreto, 28Boca do Rio, Salvador — BA
+        - term [ref=f4e152]: Horário
+        - definition [ref=f4e153]: Todos os dias úteis, até as 19h
+        - term [ref=f4e154]: Telefone e WhatsApp
+        - definition [ref=f4e155]:
+          - link "(71) 99392-9092" [ref=f4e156] [cursor=pointer]:
+            - /url: tel:+5571993929092
+      - generic [ref=f4e157]:
+        - heading "Prefere não sair de casa?" [level=2] [ref=f4e158]
+        - paragraph [ref=f4e159]: A gente atende Boca do Rio e bairros vizinhos com busca e entrega. Manda seu endereço no WhatsApp que a gente confirma se cobre a sua região e quanto tempo leva.
+        - link "Combinar a busca" [ref=f4e160] [cursor=pointer]:
+          - /url: https://wa.me/5571993929092?text=Oi%21%20Queria%20saber%20se%20voc%C3%AAs%20buscam%20o%20aparelho%20no%20meu%20endere%C3%A7o.
+    - generic [ref=f4e163]:
+      - heading "Manda o que aconteceu com ele." [level=2] [ref=f4e164]
+      - paragraph [ref=f4e165]: Descreve o problema em uma frase e a gente responde com o próximo passo e uma estimativa de preço.
+      - generic [ref=f4e166]:
+        - link "Falar no WhatsApp" [ref=f4e167] [cursor=pointer]:
+          - /url: https://wa.me/5571993929092?text=Oi%2C%20vim%20pelo%20site.%20Meu%20celular%20est%C3%A1%20com%20problema%20e%20queria%20um%20or%C3%A7amento.
+        - link "Ligar agora" [ref=f4e170] [cursor=pointer]:
+          - /url: tel:+5571993929092
+  - contentinfo [ref=f4e171]:
+    - generic [ref=f4e172]:
+      - link "Elo Apple Repair" [ref=f4e173] [cursor=pointer]:
+        - /url: "#topo"
+      - generic [ref=f4e177]:
+        - link "Serviços" [ref=f4e178] [cursor=pointer]:
+          - /url: "#servicos"
+        - link "Como funciona" [ref=f4e179] [cursor=pointer]:
+          - /url: "#como"
+        - link "Endereço" [ref=f4e180] [cursor=pointer]:
+          - /url: "#local"

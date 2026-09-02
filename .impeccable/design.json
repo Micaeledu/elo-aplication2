@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-02T00:00:00.000Z",
+  "title": "Design System: Elo Apple Repair",
+  "extensions": {
+    "colorMeta": {
+      "sinal-lima": { "role": "primary", "displayName": "Verde Sinal", "canonical": "#C7F53E", "tonalRamp": ["#1F2A08", "#3A4D0E", "#5A7815", "#7CA51D", "#A0D129", "#C7F53E", "#DAF97D", "#EEFDBD"] },
+      "preto-absoluto": { "role": "neutral", "displayName": "Preto Absoluto", "canonical": "#000000", "tonalRamp": ["#000000", "#101312", "#1D2221", "#2C3231", "#454B4A", "#6B7170", "#A0A6A5", "#D6DBDA"] },
+      "painel-texto": { "role": "neutral", "displayName": "Painel Texto", "canonical": "#F4F6F5", "tonalRamp": ["#2A2C2B", "#454847", "#616463", "#7D807F", "#9A9D9C", "#B8BAB9", "#D6D8D7", "#F4F6F5"] },
+      "painel-texto-suave": { "role": "neutral", "displayName": "Painel Texto Suave", "canonical": "#8E9694", "tonalRamp": ["#1E2120", "#363B3A", "#4F5554", "#68706E", "#8E9694", "#A9B0AE", "#C6CBCA", "#E4E7E6"] },
+      "papel": { "role": "neutral", "displayName": "Papel", "canonical": "#F1F3F2", "tonalRamp": ["#0E1110", "#26302C", "#3F4C47", "#5A6863", "#77857F", "#96A39D", "#C8D0CC", "#F1F3F2"] },
+      "papel-cartao": { "role": "neutral", "displayName": "Papel Cartão", "canonical": "#FFFFFF", "tonalRamp": ["#161A19", "#2E3332", "#484D4C", "#636867", "#7F8483", "#9CA1A0", "#C7CBCA", "#FFFFFF"] },
+      "texto-principal": { "role": "neutral", "displayName": "Texto Principal", "canonical": "#080A0A", "tonalRamp": ["#080A0A", "#1E201F", "#363837", "#4F5150", "#6A6C6B", "#868887", "#B4B6B5", "#EEF1F0"] },
+      "texto-suave": { "role": "neutral", "displayName": "Texto Suave", "canonical": "#525A5B", "tonalRamp": ["#1A1D1D", "#2F3435", "#454B4C", "#525A5B", "#6F7778", "#8D9495", "#ADB3B3", "#CFD3D3"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Títulos, número da nota, selo de passo final e texto de citação (peso 400 apenas nas citações)." },
+      "body": { "displayName": "Body", "purpose": "Todo o texto corrido, botões e labels." }
+    },
+    "shadows": [
+      { "name": "cta-glow", "value": "0 4px 20px rgba(199,245,62,.32), inset 0 1px 0 rgba(255,255,255,.5)", "purpose": "Botão primário em repouso." },
+      { "name": "cta-glow-hover", "value": "0 8px 28px rgba(199,245,62,.44), inset 0 1px 0 rgba(255,255,255,.5)", "purpose": "Botão primário no hover." },
+      { "name": "card-whisper", "value": "0 1px 2px rgba(8,10,10,.04)", "purpose": "Separação sutil do card de depoimento sobre o papel." }
+    ],
+    "motion": [
+      { "name": "btn-transition", "value": "transform .18s ease, filter .18s ease, box-shadow .18s ease", "purpose": "Feedback de hover/press do botão primário e ghost." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "960px" },
+      { "name": "mobile", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal (ex: 'Falar no WhatsApp'), único elemento com sombra própria no sistema.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Falar no WhatsApp</a>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:9px; background:#C7F53E; color:#000; text-decoration:none; font-weight:600; font-size:15.5px; padding:13px 20px; border-radius:999px; border:0; cursor:pointer; box-shadow:0 4px 20px rgba(199,245,62,.32), inset 0 1px 0 rgba(255,255,255,.5); transition:transform .18s ease, filter .18s ease, box-shadow .18s ease; } .ds-btn-primary:hover { filter:brightness(1.06); transform:translateY(-1px); box-shadow:0 8px 28px rgba(199,245,62,.44), inset 0 1px 0 rgba(255,255,255,.5); } .ds-btn-primary:focus-visible { outline:3px solid #C7F53E; outline-offset:3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Ação secundária sobre painéis pretos (ex: 'Ligar agora').",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Ligar agora</a>",
+      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; justify-content:center; gap:9px; background:transparent; color:#F4F6F5; text-decoration:none; font-weight:600; font-size:15.5px; padding:13px 20px; border-radius:999px; border:1px solid rgba(255,255,255,.16); cursor:pointer; transition:background .18s ease; } .ds-btn-ghost:hover { background:rgba(255,255,255,.07); } .ds-btn-ghost:focus-visible { outline:3px solid #C7F53E; outline-offset:3px; }"
+    },
+    {
+      "name": "Quote Card",
+      "kind": "card",
+      "refersTo": "card-quote",
+      "description": "Card de depoimento/avaliação do Google.",
+      "html": "<figure class=\"ds-quote\"><p>Chegou, foi atendido na hora e saiu com o aparelho resolvido em poucos minutos.</p><figcaption>Avaliação no Google</figcaption></figure>",
+      "css": ".ds-quote { background:#FFFFFF; border:1px solid rgba(10,12,12,.14); border-radius:16px; padding:28px; box-shadow:0 1px 2px rgba(8,10,10,.04); } .ds-quote p { font-family:'Bricolage Grotesque',Helvetica,Arial,sans-serif; font-weight:400; font-size:20px; line-height:1.35; letter-spacing:-.01em; color:#080A0A; margin:0 0 18px; } .ds-quote figcaption { font-size:13.5px; color:#525A5B; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Sinal Verde",
+    "overview": "O site inteiro gira em torno de um único sinal: um verde-lima quase fluorescente pontuando um fundo preto absoluto, como a luz de \"aprovado\" numa bancada de conserto à noite. O resto da página é deliberadamente neutro — papel claro, texto escuro, linhas finas — para que esse verde nunca precise competir por atenção. Isso conversa direto com o posicionamento do negócio (orçamento fechado antes de qualquer reparo): o verde só aparece onde há uma decisão ou confirmação a ser tomada — o CTA de WhatsApp, a nota 5,0, o selo do passo final.",
+    "keyCharacteristics": [
+      "Um único acento de cor (verde-lima), usado com raridade extrema.",
+      "Alternância entre painéis quase pretos (hero, CTA final) e seções em papel claro — nunca um gradiente entre os dois.",
+      "Quase sem sombra; a separação vem de linhas finas e do contraste de painel.",
+      "Pílula total nos botões, raio grande (22px) nos painéis, raio médio (16px) nos cards de depoimento."
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "O verde-lima nunca aparece em mais de um elemento por tela ao mesmo tempo (excluindo o glow radial de fundo).", "section": "colors" },
+      { "name": "The Panel-or-Paper Rule", "body": "Uma seção é ou um painel preto (hero, CTA final) ou uma seção em papel; não existe meio-termo cinza entre os dois.", "section": "colors" },
+      { "name": "The Heading-Only Display Rule", "body": "A fonte display nunca carrega texto de corpo longo; é reservada para títulos, números de destaque e citações curtas.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Nenhum elemento ganha sombra só por ser um 'card'; sombra é reservada a ações ou a uma separação muito sutil.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do manter o verde-lima raro — no máximo um elemento de primeiro plano por tela.",
+      "Do manter hero e CTA final como painéis pretos fixos, independentes do tema claro/escuro do visitante.",
+      "Do usar pílula (999px) em qualquer novo botão clicável.",
+      "Do limitar títulos de seção a ~34ch de largura."
+    ],
+    "donts": [
+      "Don't adicionar sombra a facts, steps ou itens de lista de serviço.",
+      "Don't introduzir uma segunda cor de acento.",
+      "Don't usar a fonte display em parágrafos longos de corpo.",
+      "Don't misturar painel preto com papel dentro da mesma seção."
+    ]
+  }
+}
