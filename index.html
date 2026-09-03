@@ -184,6 +184,8 @@ section{padding:120px 0}
   .step,.step.is-last .step-n{transition:none;opacity:1;transform:none}
   .svc::before,.svc::after,.svc-tag{transition:none}
   .hot-ring.on{animation:none}
+  .quotes-viewport{transition:none;opacity:1;transform:none}
+  .quotes-track{animation:none}
 }
 
 /* serviços */
@@ -237,8 +239,13 @@ section{padding:120px 0}
 }
 
 /* depoimentos */
-.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.quote{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 1px 2px rgba(8,10,10,.04)}
+.quotes-viewport{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);opacity:0;transform:translateY(16px);transition:opacity .5s ease-out,transform .5s ease-out}
+.quotes-viewport.is-visible{opacity:1;transform:translateY(0)}
+.quotes-track{display:flex;gap:26px;width:max-content;animation:quotes-marquee 36s linear infinite;animation-play-state:paused}
+.quotes-viewport.is-visible .quotes-track{animation-play-state:running}
+.quotes-dup{display:contents}
+@keyframes quotes-marquee{to{transform:translateX(calc(-50% - 13px))}}
+.quote{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 1px 2px rgba(8,10,10,.04);flex:0 0 clamp(260px,32vw,360px)}
 .quote p::first-letter{color:var(--fg)}
 .quote p{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.35;letter-spacing:-.01em;margin-bottom:18px}
 .quote footer{font-size:13.5px;color:var(--fg-soft)}
@@ -282,7 +289,6 @@ footer.site{padding:56px 0 130px;color:var(--fg-soft);font-size:14px}
   .step-n,.step.is-last .step-n{margin-bottom:24px}
   .svc-layout{grid-template-columns:1fr}
   .diagram{position:static;max-width:260px;margin:36px auto 0}
-  .quotes{grid-template-columns:1fr}
   .place{grid-template-columns:1fr;gap:36px}
   .final{padding:62px 40px}
   section{padding:88px 0}
@@ -484,18 +490,34 @@ footer.site{padding:56px 0 130px;color:var(--fg-soft);font-size:14px}
         <h2>Quem já passou por aqui</h2>
         <p>Resumo de avaliações deixadas no Google.</p>
       </div>
-      <div class="quotes">
-        <div class="quote">
-          <p>Chegou, foi atendido na hora e saiu com o aparelho resolvido em poucos minutos.</p>
-          <footer>Avaliação no Google</footer>
-        </div>
-        <div class="quote">
-          <p>Deixou o iPhone quebrado, a loja buscou, passou o orçamento, consertou e devolveu na porta.</p>
-          <footer>Avaliação no Google</footer>
-        </div>
-        <div class="quote">
-          <p>Trocou a tela e ficou satisfeito com o resultado — ficou como novo.</p>
-          <footer>Avaliação no Google</footer>
+      <div class="quotes-viewport">
+        <div class="quotes-track">
+          <div class="quote">
+            <p>Chegou, foi atendido na hora e saiu com o aparelho resolvido em poucos minutos.</p>
+            <footer>Avaliação no Google</footer>
+          </div>
+          <div class="quote">
+            <p>Deixou o iPhone quebrado, a loja buscou, passou o orçamento, consertou e devolveu na porta.</p>
+            <footer>Avaliação no Google</footer>
+          </div>
+          <div class="quote">
+            <p>Trocou a tela e ficou satisfeito com o resultado — ficou como novo.</p>
+            <footer>Avaliação no Google</footer>
+          </div>
+          <div class="quotes-dup" aria-hidden="true">
+            <div class="quote">
+              <p>Chegou, foi atendido na hora e saiu com o aparelho resolvido em poucos minutos.</p>
+              <footer>Avaliação no Google</footer>
+            </div>
+            <div class="quote">
+              <p>Deixou o iPhone quebrado, a loja buscou, passou o orçamento, consertou e devolveu na porta.</p>
+              <footer>Avaliação no Google</footer>
+            </div>
+            <div class="quote">
+              <p>Trocou a tela e ficou satisfeito com o resultado — ficou como novo.</p>
+              <footer>Avaliação no Google</footer>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -622,6 +644,27 @@ footer.site{padding:56px 0 130px;color:var(--fg-soft);font-size:14px}
   }, { threshold: 0.2 });
 
   steps.forEach(function(s){ io.observe(s); });
+})();
+
+(function(){
+  var viewport = document.querySelector('.quotes-viewport');
+  if(!viewport) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce || !('IntersectionObserver' in window)){
+    viewport.classList.add('is-visible');
+    return;
+  }
+
+  var io = new IntersectionObserver(function(entries, obs){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      obs.unobserve(entry.target);
+    });
+  }, { threshold: 0.2 });
+
+  io.observe(viewport);
 })();
 </script>
 </body>
